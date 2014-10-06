@@ -5,7 +5,7 @@ app     = express()
 port = process.env.PORT || 4000
 
 json  = fs.readFileSync './src/nav.json', 'utf8'
-jsonp = "render(" + json + ");"
+jsonp = "MarkupAPI.render(" + json + ");"
 
 logRequest = (url, status) ->
   console.log 'Request for: ' + url + ' (' + status + ')'
