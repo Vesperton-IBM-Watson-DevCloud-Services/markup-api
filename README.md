@@ -22,11 +22,11 @@ order to use the API on the client-side with AJAX, you'll need to use
 [JSONP](http://en.wikipedia.org/wiki/JSONP) to work around the [same
 origin policy](http://en.wikipedia.org/wiki/Same-origin_policy).
 
-To trigger a JSONP response, simply append `?callback=render` to the request
+To trigger a JSONP response, simply append `?callback=MarkupAPI.render` to the request
 like so:
 
 ```bash
-$ curl http://markup.content.ibmcloud.io/api/v1/cloud.json?callback=render
+$ curl http://markup.content.ibmcloud.io/api/v1/cloud.json?callback=MarkupAPI.render
 ```
 
 ### Data Structure
@@ -48,20 +48,20 @@ Here's an example response:
 To use the API response on the client side you'll need to use JSONP.
 
 Write a callback function called
-`render` to handle the API response then simply call an API endpoint from a
+`MarkupAPI.render` to handle the API response then simply call an API endpoint from a
 `<script>` tag. Make sure to use the correct endpoint by appending 
-`?callback=render` to your request.
+`?callback=MarkupAPI.render` to your request.
 
 Here's a simple implementation using jQuery:
 
 ```html
 <script type="text/javascript" charset="utf-8">
-  function render(data) {
+  function MarkupAPI.render(data) {
     $('#target').append(data.html);
   }
 </script>
 
-<script src="http://markup.content.ibmcloud.io/api/v1/cloud.json?callback=render"></script>
+<script src="http://markup.content.ibmcloud.io/api/v1/cloud.json?callback=MarkupAPI.render"></script>
 ```
 
 ## Demo
@@ -73,12 +73,12 @@ this repository.
 To reproduce the demo in your own application, you'll need four things:
 
 - a script tag to call the API's JSONP endpoint
-- a JavaScript function called `render` to handle the API response
+- a JavaScript function called `MarkupAPI.render` to handle the API response
 - an HTML element with the id of `target` to accept the appended HTML
 - jQuery
 
 Start by [downloading](https://raw.githubusercontent.com/mmwtsn/markup-api/gh-pages/src/markup-jsonp-library.js)
-the little library containing the `render` function into a local directory. We
+the little library containing the `MarkupAPI.render` function into a local directory. We
 named our directory "public" in this example. Source it at the bottom of your
 page along with API call and jQuery (if it isn't already loaded).
 
@@ -90,7 +90,7 @@ page along with API call and jQuery (if it isn't already loaded).
   <script src="public/markup-jsonp-library.js" type="text/javascript" charset="utf-8"></script>
 
   <!-- Call the Markup API -->
-  <script src="http://markup.content.ibmcloud.io/api/v1/cloud.json?callback=render"></script>
+  <script src="http://markup.content.ibmcloud.io/api/v1/cloud.json?callback=MarkupAPI.render"></script>
 </body>
 ```
 
