@@ -1,16 +1,17 @@
 express = require('express')
+path    = require('path')
 fs      = require('fs')
 app     = express()
 
-port = process.env.PORT || 4000
+port = process.env.PORT || 3000
 
-json  = fs.readFileSync './src/nav.json', 'utf8'
+json  = fs.readFileSync path.join(__dirname, '../src/nav.json'), 'utf8'
 jsonp = "MarkupAPI.render(" + json + ");"
 
 logRequest = (url, status) ->
   console.log 'Request for: ' + url + ' (' + status + ')'
 
-app.get '/api/v1/cloud.json', (req, res) ->
+app.get '/v1/cloud.json', (req, res) ->
   logRequest req.url, res.statusCode
 
   res.header 'Content-Type', 'application/json'
