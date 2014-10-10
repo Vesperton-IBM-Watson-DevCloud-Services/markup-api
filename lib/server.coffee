@@ -5,7 +5,7 @@ app     = express()
 
 port = process.env.PORT || 3000
 
-json  = fs.readFileSync path.join(__dirname, '../src/nav.json'), 'utf8'
+json  = fs.readFileSync path.join(__dirname, '../src/content.json'), 'utf8'
 jsonp = "MarkupAPI.render(" + json + ");"
 
 logRequest = (url, status) ->
