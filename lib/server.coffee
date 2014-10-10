@@ -11,7 +11,7 @@ jsonp = "MarkupAPI.render(" + json + ");"
 logRequest = (url, status) ->
   console.log 'Request for: ' + url + ' (' + status + ')'
 
-app.get '/api/v1/cloud.json', (req, res) ->
+app.get '/v1/cloud.json', (req, res) ->
   logRequest req.url, res.statusCode
 
   res.header 'Content-Type', 'application/json'
