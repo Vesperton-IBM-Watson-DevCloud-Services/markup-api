@@ -9,6 +9,9 @@
     "type": "git",
     "url": "https://github.com/mmwtsn/markup-api"
   },
+  "scripts": {
+    "test": "make test"
+  },
   "author": "M. Maxwell Watson",
   "license": "MIT",
   "bugs": {
