@@ -17,6 +17,9 @@ app.get '/v1/cloud.json', (req, res) ->
 app.get '/*', (req, res) ->
   helpers.logRequest req.url, res.statusCode
 
+  res.header 'Content-Type', 'application/json'
+  res.header 'Charset', 'utf-8'
+
   res.status 404
   res.send
     error: 404,
