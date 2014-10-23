@@ -3,6 +3,8 @@ path    = require('path')
 fs      = require('fs')
 app     = express()
 
+module.exports = app
+
 app.use express.static path.join(__dirname, '..', 'public')
 
 port = process.env.PORT || 3000
