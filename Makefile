@@ -4,7 +4,7 @@ COFFEE_COMPILER = --compilers coffee:coffee-script/register
 test:
 	$(BIN)/mocha $(COFFEE_COMPILER)
 
-server:
+start:
 	$(BIN)/coffee ./lib/server.coffee
 
 bower-install:
