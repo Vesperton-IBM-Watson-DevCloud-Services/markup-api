@@ -1,4 +1,4 @@
-# Markup API
+# Markup API ![Build Status](https://travis-ci.org/mmwtsn/markup-api.svg?branch=master)
 ## Description
 "Markup API" is a JSON API that returns HTML for the IBM Cloud Marketing
 properties. Can be consumed on the client-side with a [JSONP callback](http://en.wikipedia.org/wiki/JSONP).
