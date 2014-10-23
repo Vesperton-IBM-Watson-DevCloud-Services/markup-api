@@ -10,7 +10,8 @@
     "url": "https://github.com/mmwtsn/markup-api"
   },
   "scripts": {
-    "test": "make test"
+    "test": "make test",
+    "start": "make start"
   },
   "author": "M. Maxwell Watson",
   "license": "MIT",
