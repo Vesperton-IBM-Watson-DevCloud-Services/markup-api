@@ -1,6 +1,6 @@
-BIN      = ./node_modules/.bin
-COMPILER = --compilers coffee:coffee-script/register
-REPORTER = --reporter list
+BIN             = ./node_modules/.bin
+TEST_REPORTER   = --reporter list
+COFFEE_COMPILER = --compilers coffee:coffee-script/register
 
 test:
 	$(BIN)/mocha $(COMPILER) $(REPORTER)
