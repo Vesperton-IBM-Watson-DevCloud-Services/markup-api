@@ -16,6 +16,7 @@
     "bower-update": "./node_modules/.bin/bower update",
     "postinstall": "npm run bower-install"
   },
+  "private": true,
   "author": "M. Maxwell Watson",
   "license": "MIT",
   "bugs": {
