@@ -7,13 +7,12 @@ app = require '../lib/server'
 
 describe 'app server', ->
 
-  it 'is running', (done) ->
+  it '"GET /" responds with 404', (done) ->
     request(app)
       .get('/')
       .expect 404, done
 
-  it 'responds with valid json', (done) ->
+  it '"GET /v1/cloud.json" responds with 200', (done) ->
     request(app)
       .get('/v1/cloud.json')
-      .expect('Content-Type', /json/)
       .expect 200, done
