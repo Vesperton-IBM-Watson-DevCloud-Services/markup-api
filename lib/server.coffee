@@ -9,7 +9,7 @@ app.use express.static path.join(__dirname, '..', 'public')
 app.get '/v1/cloud.json', (req, res) ->
   helpers.logRequest req.url, res.statusCode
 
-  res.header 'Content-Type', 'application/json'
+  res.type 'application/json'
   res.header 'Charset', 'utf-8'
 
   helpers.sendResponse req, res
@@ -17,7 +17,7 @@ app.get '/v1/cloud.json', (req, res) ->
 app.get '/*', (req, res) ->
   helpers.logRequest req.url, res.statusCode
 
-  res.header 'Content-Type', 'application/json'
+  res.type 'application/json'
   res.header 'Charset', 'utf-8'
 
   res.status 404
@@ -26,7 +26,7 @@ app.get '/*', (req, res) ->
     message: 'Not Found',
     documentation: 'https://github.com/mmwtsn/markup-api#markup-api'
 
-port  = process.env.PORT || 3000
+port  = process.env.PORT || 5000
 
 server = app.listen port, ->
   helpers.logServerStart server
