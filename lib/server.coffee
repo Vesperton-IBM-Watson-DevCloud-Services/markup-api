@@ -1,32 +1,18 @@
 express = require('express')
 path    = require('path')
 app     = express()
+
 helpers = require './helpers'
-
-module.exports = app
-app.use express.static path.join(__dirname, '..', 'public')
-
-app.get '/v1/cloud.json', (req, res) ->
-  helpers.logRequest req.url, res.statusCode
-
-  res.type 'application/json'
-  res.header 'Charset', 'utf-8'
-
-  helpers.sendResponse req, res
-
-app.get '/*', (req, res) ->
-  helpers.logRequest req.url, res.statusCode
-
-  res.type 'application/json'
-  res.header 'Charset', 'utf-8'
-
-  res.status 404
-  res.send
-    error: 404,
-    message: 'Not Found',
-    documentation: 'https://github.com/mmwtsn/markup-api#markup-api'
+api     = require './routes/api'
+splat   = require './routes/404'
 
 port  = process.env.PORT || 5000
 
+app.use express.static path.join(__dirname, '..', 'public')
+app.use '/v1/cloud.json', api
+app.use '/*', splat
+
 server = app.listen port, ->
   helpers.logServerStart server
+
+module.exports = app
