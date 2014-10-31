@@ -17,7 +17,25 @@
     "postinstall": "npm run bower-install"
   },
   "private": true,
-  "author": "M. Maxwell Watson",
+  "contributors": [
+    {
+      "name": "M. Maxwell Watson",
+      "email": "hi@mmwtsn.com"
+    },
+    {
+      "name": "Paat Sinsuwan",
+      "email": "paat@sinsuwan.com"
+    },
+    {
+      "name": "Vincent OuYoung"
+    },
+    {
+      "name": "Sheryl Morgan"
+    },
+    {
+      "name": "Vincente Golveo"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mmwtsn/markup-api/issues"
