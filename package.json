@@ -11,7 +11,9 @@
   },
   "scripts": {
     "test": "./node_modules/.bin/mocha --compilers coffee:coffee-script/register",
-    "start": "./node_modules/.bin/coffee ./lib/server.coffee",
+    "start": "forever start -c ./node_modules/.bin/coffee ./lib/server.coffee",
+    "stop": "forever stop 0",
+    "restart": "forever restart 0",
     "bower-install": "./node_modules/.bin/bower install",
     "bower-update": "./node_modules/.bin/bower update",
     "postinstall": "npm run bower-install"
